@@ -1,11 +1,15 @@
-import BookList from "./features/book-list/BookList";
-import Filters from "./features/filters/Filters";
+import BookListWrapper from "./features/book-list/BookListWrapper";
+import FilterWrapper from "./features/filters/FilterWrapper";
+import store from "./store";
+import { Provider } from "react-redux";
 
 function App() {
   return (
     <div className="container-fluid mt-3">
-      <Filters />
-      <BookList />
+      <Provider store={store}>
+        <FilterWrapper />
+        <BookListWrapper />
+      </Provider>
     </div>
   );
 }
