@@ -1,4 +1,5 @@
 import { Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const BookList = (props: any) => {
   const list: any = props.list;
@@ -7,7 +8,7 @@ const BookList = (props: any) => {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>#</th>
+            <th>ID</th>
             <th>Title</th>
             <th>Price</th>
             <th>Authors</th>
@@ -20,7 +21,9 @@ const BookList = (props: any) => {
           {list?.map((l: any, i: number) => {
             return (
               <tr key={i}>
-                <td>{i + 1}</td>
+                <td>
+                  <Link to={`details/${l.id}`}> {l.id}</Link>
+                </td>
                 <td>{l.title}</td>
                 <td>{l.published?.price}</td>
                 <td>{l.authors?.toString()}</td>

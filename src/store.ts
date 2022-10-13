@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { bookSlice, getBooks } from "./data/booksSlice";
+import { bookSlice, getBooks, getBook } from "./data/booksSlice";
 
 export default configureStore({
   reducer: {
@@ -7,6 +7,6 @@ export default configureStore({
   },
 });
 
-const actions = { ...bookSlice.actions, getBooks };
+const actions = { ...bookSlice.actions, getBooks, getBook };
 
 export { actions };
