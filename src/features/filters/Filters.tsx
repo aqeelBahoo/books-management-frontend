@@ -60,15 +60,47 @@ const Filters = ({ onSubmit, onFormFieldChange, onClear, form }: any) => {
               />
             </Form.Group>
           </Col>
+
+          <Col>
+            <Form.Group className="mb-3">
+              <Form.Label>Year</Form.Label>
+              <Form.Control
+                type="number"
+                min="1900"
+                max="2099"
+                step="1"
+                placeholder="Enter Year"
+                value={form.year || ""}
+                onChange={(e) =>
+                  onFormFieldChange({ year: e.target.value?.trim() })
+                }
+              />
+            </Form.Group>
+          </Col>
+
+          <Col>
+            <Form.Group className="mb-3">
+              <Form.Label>Full Date</Form.Label>
+              <Form.Control
+                type="date"
+                placeholder="Enter Full Date"
+                value={form.fullDate || ""}
+                onChange={(e) =>
+                  onFormFieldChange({ fullDate: e.target.value?.trim() })
+                }
+              />
+            </Form.Group>
+          </Col>
         </Row>
+        <div className="mt-3">
+          <Button variant="secondary" onClick={onClear} className="me-3">
+            Clear
+          </Button>
 
-        <Button variant="secondary" onClick={onClear}>
-          Clear
-        </Button>
-
-        <Button variant="primary" onClick={onSubmit}>
-          Search
-        </Button>
+          <Button variant="primary" onClick={onSubmit}>
+            Search
+          </Button>
+        </div>
       </Form>
     </>
   );

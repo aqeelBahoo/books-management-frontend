@@ -6,7 +6,7 @@ const initialState = { list: null, form: null };
 const getBooks = createAsyncThunk("books/all", async (_, { getState }) => {
   const state: any = getState();
   const params = state.books.form;
-  const response = await axios.get("http://localhost:3000/books", {
+  const response = await axios.get("http://localhost:3000/book/search", {
     params,
   });
   return response.data;
