@@ -1,5 +1,6 @@
 import { Card, Row, Col, Image } from "react-bootstrap";
-const BookDetails = ({ book }: any) => {
+import { Book } from "../../interfaces/book";
+const BookDetails = ({ book }: { book: Book }) => {
   return (
     <div className="container">
       <h1>Book Details</h1>

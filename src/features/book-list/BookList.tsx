@@ -1,8 +1,8 @@
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Book } from "../../interfaces/book";
 
-const BookList = (props: any) => {
-  const list: any = props.list;
+const BookList = ({ list }: { list: Array<Book> }) => {
   return (
     <div className="mt-5" style={{ height: "500px", overflow: "auto" }}>
       <Table striped bordered hover>

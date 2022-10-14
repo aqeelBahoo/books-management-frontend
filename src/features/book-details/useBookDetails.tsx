@@ -1,6 +1,10 @@
+import { Book } from "../../interfaces/book";
+
 const useBookDetailsState = (useSelector: any, dispatch: any, actions: any) => {
   const state = useSelector(
-    (s: { books: { list: Array<any>; book: any } }) => ({ book: s.books.book })
+    (s: { books: { list: Array<Book>; book: Book } }) => ({
+      book: s.books.book,
+    })
   );
 
   const getBook = async () => {
